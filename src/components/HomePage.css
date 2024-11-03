@@ -1,0 +1,180 @@
+/* src/components/HomePage.css */
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background color */
+  }
+  
+  .home-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .navbar {
+    background-color: #2563eb; /* Primary color */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-icons .icon {
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    margin: 40px 0;
+  }
+  
+  .title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #1e3a8a; /* Darker shade of primary */
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .report-button {
+    background-color: #4f46e5; /* Deep purple for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .report-button:hover {
+    background-color: #3730a3; /* Darker shade on hover */
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .nav-links li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #2563eb; /* Link color */
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #1e40af; /* Darker shade on hover */
+  }
+  
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px; /* Limit width on large screens */
+  }
+  
+  .modal-content h3 {
+    margin: 0 0 15px;
+  }
+  
+  .modal-content input,
+  .modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .modal-content button {
+    background-color: #4f46e5; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-content button:hover {
+    background-color: #3730a3; /* Darker shade on hover */
+  }
+  
+  .close-button {
+    background-color: transparent;
+    color: #2563eb; /* Close button color */
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-icons {
+      margin-top: 10px;
+    }
+  
+    .action-buttons {
+      flex-direction: column;
+    }
+  
+    .report-button {
+      width: 100%; /* Full-width buttons on mobile */
+      margin: 5px 0; /* Spacing between buttons */
+    }
+  
+    .modal-content {
+      width: 95%; /* Slightly more width for modal on mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 24px; /* Smaller title font on mobile */
+    }
+  
+    .report-button {
+      font-size: 14px; /* Smaller button font on mobile */
+    }
+  }
+  

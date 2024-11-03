@@ -1,0 +1,94 @@
+/* src/components/ReportLostItem.css */
+
+.report-lost-item {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .confirmation {
+    color: #34d399; /* Green for success message */
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .lost-item-form .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .lost-item-form label {
+    width: 30%;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  .lost-item-form input,
+  .lost-item-form select,
+  .lost-item-form textarea {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    transition: border-color 0.2s;
+  }
+  
+  .lost-item-form input:focus,
+  .lost-item-form select:focus,
+  .lost-item-form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+  }
+  
+  .lost-item-form textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #1e40af;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 600px) {
+    .lost-item-form .form-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .lost-item-form label {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  
+    .lost-item-form input,
+    .lost-item-form select,
+    .lost-item-form textarea {
+      width: 100%;
+    }
+  }
+  
