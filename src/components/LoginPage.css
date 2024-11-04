@@ -1,0 +1,84 @@
+/* src/components/LoginPage.css */
+
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+    color: white; /* White text for contrast */
+    font-family: 'Arial', sans-serif;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the form */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Set a fixed width for the login container */
+}
+
+.login-title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px; /* Increased font size for title */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-input {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.form-input:focus {
+    outline: none; /* Remove default outline */
+    border: 2px solid #4CAF50; /* Green border on focus */
+}
+
+.login-button {
+    padding: 12px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.login-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center; /* Center the error message */
+}
+
+.redirect-text {
+    margin-top: 20px;
+    text-align: center; /* Center the redirect text */
+    color: #ddd; /* Light grey text */
+}
+
+.redirect-text a {
+    color: #ffdd57; /* Yellow link color */
+    text-decoration: underline;
+}

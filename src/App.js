@@ -1,26 +1,36 @@
 // src/App.js
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './components/HomePage';
-import ReportLostItem from './components/ReportLostItem'; // Ensure you have this component
-import ReportFoundItem from './components/ReportFoundItem'; // Import the new component
-import FoundItems from './components/FoundItems'; // Adjust the import based on your file structure
-import Profile from './components/Profile'; // Adjust the import based on your file structure
-import './App.css';
+import LoginPage from './components/LoginPage';
+import SignupPage from './components/SignupPage';
+import HomePage from './components/HomePage'; // Assuming you have this
+import ReportLostItem from './components/ReportLostItem'; // Import the component
+import ReportFoundItem from './components/ReportFoundItem'; // Import the component
+import FoundItems from './components/FoundItems'; // Import the component
+import UserProfile from './components/UserProfile'; // Import the component
+import './App.css'; // Your global CSS
 
-function App() {
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true); // Update the login state
+  };
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/report-lost" element={<ReportLostItem />} />
-        <Route path="/report-found" element={<ReportFoundItem />} /> {/* Add route for report found */}
+        <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/" element={isLoggedIn ? <HomePage /> : <LoginPage onLogin={handleLogin} />} />
+        <Route path="/report-lost-item" element={<ReportLostItem />} />
+        <Route path="/report-found-item" element={<ReportFoundItem />} />
         <Route path="/found-items" element={<FoundItems />} />
-        <Route path="/profile" element={<Profile />} />
-        {/* Add more routes as needed */}
+        <Route path="/user-profile" element={<UserProfile />} />
+        {/* Add more routes as necessary */}
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

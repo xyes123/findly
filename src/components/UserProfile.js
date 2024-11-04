@@ -1,6 +1,7 @@
 // src/components/UserProfile.js
 import React, { useState } from 'react';
 import './UserProfile.css';
+import { FaUserCircle, FaCamera, FaSave } from 'react-icons/fa';
 
 function UserProfile() {
   const [profileData, setProfileData] = useState({
@@ -39,14 +40,17 @@ function UserProfile() {
 
   return (
     <div className="user-profile">
-      <h2>User Profile</h2>
+      <h2 className="profile-title">User Profile</h2>
       <div className="profile-picture">
         {profileData.profilePicture ? (
-          <img src={profileData.profilePicture} alt="Profile" />
+          <img src={profileData.profilePicture} alt="Profile" className="profile-img" />
         ) : (
-          <div className="placeholder">No Image</div>
+          <FaUserCircle className="profile-icon" />
         )}
-        <input type="file" accept="image/*" onChange={handleImageUpload} />
+        <label className="upload-button">
+          <FaCamera /> Upload
+          <input type="file" accept="image/*" onChange={handleImageUpload} />
+        </label>
       </div>
       <form onSubmit={handleSave} className="profile-form">
         <div className="form-group">
@@ -61,7 +65,7 @@ function UserProfile() {
           <label htmlFor="phone">Phone Number</label>
           <input type="tel" id="phone" name="phone" value={profileData.phone} onChange={handleChange} required />
         </div>
-        <h3>Change Password</h3>
+        <h3 className="password-change-title">Change Password</h3>
         <div className="form-group">
           <label htmlFor="currentPassword">Current Password</label>
           <input type="password" id="currentPassword" name="currentPassword" value={profileData.currentPassword} onChange={handleChange} required />
@@ -74,7 +78,7 @@ function UserProfile() {
           <label htmlFor="confirmPassword">Confirm New Password</label>
           <input type="password" id="confirmPassword" name="confirmPassword" value={profileData.confirmPassword} onChange={handleChange} required />
         </div>
-        <button type="submit" className="save-button">Save Changes</button>
+        <button type="submit" className="save-button"><FaSave /> Save Changes</button>
       </form>
     </div>
   );

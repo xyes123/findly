@@ -1,20 +1,14 @@
 // src/components/HomePage.js
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './HomePage.css';
 import { FaPlusCircle, FaBell, FaMapMarkerAlt } from 'react-icons/fa';
 
 function HomePage() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalType, setModalType] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  const openModal = (type) => {
-    setModalType(type);
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
+  const handleNavigate = (path) => {
+    navigate(path); // Navigate to the specified path
   };
 
   return (
@@ -28,15 +22,15 @@ function HomePage() {
             <FaMapMarkerAlt className="icon" />
           </div>
         </nav>
-      
+
         {/* Main Content */}
         <div className="main-content">
           <h2 className="title">Easily Track Lost and Found Items</h2>
           <div className="action-buttons">
-            <button onClick={() => openModal('lost')} className="report-button lost">
+            <button onClick={() => handleNavigate('/report-lost-item')} className="report-button lost">
               Report Lost Item
             </button>
-            <button onClick={() => openModal('found')} className="report-button found">
+            <button onClick={() => handleNavigate('/report-found-item')} className="report-button found">
               Report Found Item
             </button>
           </div>
@@ -44,31 +38,20 @@ function HomePage() {
           {/* Navigation Links */}
           <nav>
             <ul className="nav-links">
-              <li><Link to="/report-lost">Report Lost Item</Link></li>
-              <li><Link to="/report-found">Report found Item</Link></li>
-              <li><Link to="/found-items">Found Items</Link></li>
-              <li><Link to="/profile">Your Profile</Link></li>
-              {/* Add other navigation links as necessary */}
+              <li>
+                <button onClick={() => handleNavigate('/found-items')} className="nav-button">
+                  Found Items
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavigate('/user-profile')} className="nav-button">
+                  Your Profile
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
       </div>
-
-      {/* Modal for Reporting Items */}
-      {modalOpen && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h3>{modalType === 'lost' ? 'Report Lost Item' : 'Report Found Item'}</h3>
-            <form>
-              <input type="text" placeholder="Item Name" required />
-              <input type="text" placeholder="Location Last Seen/Found" required />
-              <textarea placeholder="Description" required></textarea>
-              <button type="submit">Submit</button>
-            </form>
-            <button className="close-button" onClick={closeModal}>Close</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
